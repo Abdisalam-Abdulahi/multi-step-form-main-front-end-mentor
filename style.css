@@ -97,11 +97,12 @@ body {
 main {
   background-color: var(--White);
   width: 65%;
-  height: 500px;
+  /* height: 500px; */
   left: 17%;
   margin-top: 7%;
   border-radius: 6px;
   position: absolute;
+  padding-bottom: 1.2rem;
 }
 .side_box {
   width: 30%;
@@ -136,14 +137,53 @@ dd{
 .list {
   height: 30px;
   width: 30px;
-  border: 2px solid var(--Alabaster);
+  border: 1px solid var(--Alabaster);
   color: var(--Alabaster);
   border-radius: 50%;
   text-align: center;
   padding-top: 0.15rem;
   margin-top: 0.65rem;
 }
-
+.container{
+  display: flex;
+}
+.step_one{
+  width: 60%;
+  padding-left: 5rem;
+  padding-top: 3.25rem;
+}
+.step_one__h1{
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+.step_one__p{
+  opacity: 0.45;
+}
+form{
+  margin-top: 30px;
+}
+.lebeler{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+input{
+  height: 3rem;
+  border-radius: 10px;
+  border-style: none;
+  border: 1.5px solid lightgrey;
+  padding-left: 1.2rem;
+}
+.next{
+  margin-top: 1rem;
+  left: 80%;
+  position: absolute;
+  background-color: var(--Marine_blue);
+  color: var(--Magnolia);
+  border-style: none;
+  padding: 0.5rem 1.1rem;
+  border-radius: 10px;
+}
 .attribution {
   font-size: 11px;
   text-align: center;
