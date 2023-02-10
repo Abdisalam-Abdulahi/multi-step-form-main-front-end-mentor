@@ -130,6 +130,9 @@ dt{
   color: var(--Alabaster);
   opacity: 0.65;
 }
+dd{
+  font-weight: 700;
+}
 .list {
   height: 30px;
   width: 30px;
