@@ -113,12 +113,34 @@ main {
   background-image: url(assets/images/bg-sidebar-desktop.svg);
   background-position: center left;
 }
-ul{
-    height: 100px;
-    width: 200px;
-    background-color: blue; 
-    border-radius: 50%;        
+.flexer{
+  display: flex;
+  margin-top: 15px;
+
 }
+.flexer div{
+  color: var(--White);
+  margin-left: 10px;
+}
+.wrapper{
+  padding-top: 2rem;
+  padding-left: 2rem;
+}
+dt{
+  color: var(--Alabaster);
+  opacity: 0.65;
+}
+.list {
+  height: 30px;
+  width: 30px;
+  border: 2px solid var(--Alabaster);
+  color: var(--Alabaster);
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 0.15rem;
+  margin-top: 0.65rem;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
