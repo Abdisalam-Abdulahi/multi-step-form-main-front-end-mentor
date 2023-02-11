@@ -25,60 +25,105 @@
   <body>
     <main>
       <div class="container">
-      <div class="side_box">
-        <div class="wrapper">
-          <div class="flexer">
-            <div class="list">1</div>
-            <div>
-              <dt>Step 1</dt>
-              <dd>Your info</dd>
+        <div class="side_box">
+          <div class="wrapper">
+            <div class="flexer">
+              <div class="list">1</div>
+              <div>
+                <dt>Step 1</dt>
+                <dd>Your info</dd>
+              </div>
             </div>
-          </div>
-          <div class="flexer">
-            <div class="list">2</div>
-            <div>
-              <dt>Step 2</dt>
-              <dd>Select plan</dd>
+            <div class="flexer">
+              <div class="list">2</div>
+              <div>
+                <dt>Step 2</dt>
+                <dd>Select plan</dd>
+              </div>
             </div>
-          </div>
-          <div class="flexer">
-            <div class="list">3</div>
-            <div>
-              <dt>Step 3</dt>
-              <dd>Add-ons</dd>
+            <div class="flexer">
+              <div class="list">3</div>
+              <div>
+                <dt>Step 3</dt>
+                <dd>Add-ons</dd>
+              </div>
             </div>
-          </div>
-          <div class="flexer">
-            <div class="list">4</div>
-            <div>
-              <dt>Step 4</dt>
-              <dd>Summary</dd>
+            <div class="flexer">
+              <div class="list">4</div>
+              <div>
+                <dt>Step 4</dt>
+                <dd>Summary</dd>
+              </div>
             </div>
           </div>
         </div>
+        <section class="step_one">
+          <h1 class="step_h1">Personal info</h1>
+          <p class="step_p">
+            Please provide your name, email address, and phone number.
+          </p>
+          <form action="">
+            <div class="lebeler">
+              <label for="name">Name</label>
+              <input type="text" placeholder="e.g. Stephen King" />
+            </div>
+            <div class="lebeler">
+              <label for="Email">Email</label>
+              <input type="text" placeholder="e.g. stephenking@lorem.com" />
+            </div>
+            <div class="lebeler">
+              <label for="phoneNumber">Phone Number</label>
+              <input type="text" placeholder="e.g. +1 234 567 890" />
+            </div>
+          </form>
+          <button class="next">Next Step</button>
+        </section>
+        <section class="stept_two">
+          <h1 class="step_h1">Select your plan</h1>
+          <p class="step_p">
+            You have the option of monthly or yearly billing.
+          </p>
+          <div class="service">
+            <div class="service_type">
+              <img
+                class="service__img"
+                src="assets/images/icon-arcade.svg"
+                alt=""
+              />
+              <p class="service__name">
+                Arcade <br /><span class="service__price">$9/mo</span>
+              </p>
+            </div>
+            <div class="service_type">
+              <img
+                class="service__img"
+                src="assets/images/icon-advanced.svg"
+                alt=""
+              />
+              <p class="service__name">
+                Advanced <br /><span class="service__price">$12/mo</span>
+              </p>
+            </div>
+            <div class="service_type">
+              <img
+                class="service__img"
+                src="assets/images/icon-pro.svg"
+                alt=""
+              />
+              <p class="service__name">
+                Pro <br /><span class="service__price">$15/mo</span>
+              </p>
+            </div>
+          </div>
+          <div class="month_year">
+            <p>dsfdsdfdfrg</p>
+            <img class="icon-checkmark" src="assets/images/icon-checkmark.svg" alt="">
+            <p>bbfsbs</p>
+          </div>
+        </section>
       </div>
-      <section class="step_one">
-        <h1 class="step_one__h1">Personal info</h1>
-        <p class="step_one__p">Please provide your name, email address, and phone number.</p>
-        <form action="" >
-          <div class="lebeler">
-          <label for="name">Name</label>
-          <input type="text" placeholder="e.g. Stephen King">
-        </div>
-        <div class="lebeler">
-          <label for="Email">Email</label>
-          <input type="text" placeholder="e.g. stephenking@lorem.com">
-        </div>
-        <div class="lebeler">
-          <label for="phoneNumber">Phone Number</label>
-          <input type="text" placeholder="e.g. +1 234 567 890">
-        </div>
-        </form>
-        <button class="next">Next Step</button>
-      </section>
-    </div>
     </main>
-    
+
     <!-- Sidebar start -->
 
     <!-- Step 1 Your info Step 2 Select plan Step 3 Add-ons Step 4 Summary -->

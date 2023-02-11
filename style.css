@@ -102,7 +102,7 @@ main {
   margin-top: 7%;
   border-radius: 6px;
   position: absolute;
-  padding-bottom: 1.2rem;
+  padding-bottom: 2rem;
 }
 .side_box {
   width: 30%;
@@ -114,24 +114,23 @@ main {
   background-image: url(assets/images/bg-sidebar-desktop.svg);
   background-position: center left;
 }
-.flexer{
+.flexer {
   display: flex;
   margin-top: 15px;
-
 }
-.flexer div{
+.flexer div {
   color: var(--White);
   margin-left: 10px;
 }
-.wrapper{
+.wrapper {
   padding-top: 2rem;
   padding-left: 2rem;
 }
-dt{
+dt {
   color: var(--Alabaster);
   opacity: 0.65;
 }
-dd{
+dd {
   font-weight: 700;
 }
 .list {
@@ -144,37 +143,40 @@ dd{
   padding-top: 0.15rem;
   margin-top: 0.65rem;
 }
-.container{
+.container {
   display: flex;
 }
-.step_one{
+section {
   width: 60%;
   padding-left: 5rem;
   padding-top: 3.25rem;
 }
-.step_one__h1{
+.step_one {
+  display: none;
+}
+.step_h1 {
   letter-spacing: 2px;
   margin-bottom: 5px;
 }
-.step_one__p{
+.step_p {
   opacity: 0.45;
 }
-form{
+form {
   margin-top: 30px;
 }
-.lebeler{
+.lebeler {
   display: flex;
   flex-direction: column;
   margin-bottom: 25px;
 }
-input{
+input {
   height: 3rem;
   border-radius: 10px;
   border-style: none;
   border: 1.5px solid lightgrey;
   padding-left: 1.2rem;
 }
-.next{
+.next {
   margin-top: 1rem;
   left: 80%;
   position: absolute;
@@ -183,6 +185,41 @@ input{
   border-style: none;
   padding: 0.5rem 1.1rem;
   border-radius: 10px;
+}
+.service {
+  display: flex;
+  margin-top: 2rem;
+}
+.service :nth-of-type(2),
+:nth-of-type(3) {
+  margin-left: 1rem;
+}
+.service_type {
+  width: 40%;
+  border: 1px solid var(--Lightg_ray);
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: var(--Alabaster);
+}
+
+.service__img {
+  margin-bottom: 1.7rem;
+}
+.service__name {
+  color: var(--Marine_blue);
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+.service__price {
+  margin: 0;
+  opacity: 0.4;
+}
+.month_year{
+  margin-top: 2rem;
+}
+.icon-checkmark{
+  width: 20px;
+  height: 30px;
 }
 .attribution {
   font-size: 11px;
