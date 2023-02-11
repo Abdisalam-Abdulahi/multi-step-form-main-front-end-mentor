@@ -121,6 +121,7 @@ main {
 .flexer div {
   color: var(--White);
   margin-left: 10px;
+ 
 }
 .wrapper {
   padding-top: 2rem;
@@ -154,6 +155,12 @@ section {
 .step_one {
   display: none;
 }
+.stept_two{
+  display: none;
+}
+.step_three{
+  display: none;
+}
 .step_h1 {
   letter-spacing: 2px;
   margin-bottom: 5px;
@@ -179,6 +186,7 @@ input {
 .next {
   margin-top: 1rem;
   left: 80%;
+  top: 85%;
   position: absolute;
   background-color: var(--Marine_blue);
   color: var(--Magnolia);
@@ -189,9 +197,12 @@ input {
 .service {
   display: flex;
   margin-top: 2rem;
+ 
 }
-.service :nth-of-type(2),
-:nth-of-type(3) {
+.service:nth-of-type(2){
+  margin-left: 1rem;
+}
+.service:nth-of-type(3) {
   margin-left: 1rem;
 }
 .service_type {
@@ -216,10 +227,113 @@ input {
 }
 .month_year{
   margin-top: 2rem;
+  width: 30%;
+  background-color: var(--Cool_gray);
 }
-.icon-checkmark{
+/* .icon-checkmark{
   width: 20px;
   height: 30px;
+} */
+.back{
+  position: absolute;
+  top: 90%;
+  left: 40%;
+  padding: 0.15rem 0.25rem;
+  background:var(--White);
+  border-style: none;
+  opacity: 0.55;
+}
+.adds_on_services{
+  display: flex;
+  width: 80%;
+  background-color: var(--Alabaster);
+  padding-bottom: 1rem;
+  border-radius: 10px;
+  border: 2px solid var(--Lightg_ray);
+  margin-top: 2rem;
+}
+.checkBox{
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.adds_on_services div{
+  margin-top: 1.2rem;
+  margin-left: 24px;
+  line-height: 1.2rem;
+}
+.addsOn__price{
+  margin-left: auto;
+  margin-top: 1.5rem;
+  margin-right: 0.8rem;
+  color: var(--Purplish_blue);
+}
+.addsOn_service_name{
+color: var(--Marine_blue);
+font-weight: 600;
+}
+.addsOn_service_desc{
+opacity: 0.40;
+}
+.miniBox{
+  width: 80%;
+  background-color: var(--Magnolia);
+  padding: 1.2rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+.finish_name{
+  color: var(--Marine_blue);
+  font-weight: 600;
+}
+.finish_price{
+  color: var(--Marine_blue);
+  font-weight: 600;
+  margin-left: auto;
+  margin-top: 7px;
+}
+.change{
+  opacity: 0.4;
+  text-decoration: underline;
+}
+.wrapp{
+  display: flex;
+  margin-bottom: 1.3rem;
+}
+.wrapp div{
+  line-height: 1.2rem;
+}
+.line{
+  width: 90%;
+  height: 1px;
+  margin-left: 6%;
+  background-color: var(--Cool_gray);
+  opacity: 0.4;
+  margin-bottom: 1.8rem;
+}
+.finish_service{
+  opacity: 0.4;
+}
+.finish_price2{
+  margin-left: auto;
+  color: var(--Marine_blue);
+  opacity: 0.8;
+}
+.contain{
+  line-height: 0.7rem;
+}
+.total_wrapp{
+  display: flex;
+  margin-top: 1rem;
+  width: 80%;
+}
+#total{
+  margin-left: 10px;
+}
+.total_price{
+  margin-left: auto;
+ color: var(--Purplish_blue);
+ font-weight: 900;
+ font-size: 20px;
 }
 .attribution {
   font-size: 11px;
