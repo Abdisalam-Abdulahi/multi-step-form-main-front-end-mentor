@@ -155,7 +155,7 @@ section {
   display: none;
 }
 .stept_two {
-  display: none;
+  /* display: none; */
 }
 .step_three {
   display: none;
@@ -164,7 +164,7 @@ section {
   display: none;
 }
  .step_five {
-   /* display: none;  */
+   display: none; 
 } 
 .step_h1 {
   letter-spacing: 2px;
@@ -230,15 +230,33 @@ input {
   margin: 0;
   opacity: 0.4;
 }
-.month_year {
+.monthly_yearly{
+  background-color: var(--Magnolia);
+  display: flex;
+  justify-content: center;
+  gap: 1.1rem;
+  padding: 1.1rem;
+  border-radius: 7px;
   margin-top: 2rem;
-  width: 30%;
-  background-color: var(--Cool_gray);
 }
-/* .icon-checkmark{
-  width: 20px;
-  height: 30px;
-} */
+.slide{
+  width: 2.9rem;
+  height: 1.3rem;
+  border-radius: 10px;
+  background-color: var(--Marine_blue);
+  padding: 0.15rem 0;
+  font-weight: 600;
+}
+.icon{
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--White);
+}
+.month,.year{
+opacity: 0.4;
+}
+
 .back {
   position: absolute;
   top: 90%;
