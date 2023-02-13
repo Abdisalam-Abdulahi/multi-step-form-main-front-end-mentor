@@ -152,10 +152,10 @@ section {
   padding-top: 3.25rem;
 }
 .step_one {
-  display: none;
+  /* display: none; */
 }
 .stept_two {
-  /* display: none; */
+  display: none;
 }
 .step_three {
   display: none;
