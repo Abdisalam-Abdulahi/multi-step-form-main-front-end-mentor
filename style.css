@@ -99,7 +99,7 @@ main {
   width: 65%;
   /* height: 500px; */
   left: 17%;
-  margin-top: 7%;
+  top: 19%;
   border-radius: 6px;
   position: absolute;
   padding-bottom: 2rem;
@@ -121,7 +121,6 @@ main {
 .flexer div {
   color: var(--White);
   margin-left: 10px;
- 
 }
 .wrapper {
   padding-top: 2rem;
@@ -155,12 +154,18 @@ section {
 .step_one {
   display: none;
 }
-.stept_two{
+.stept_two {
   display: none;
 }
-.step_three{
+.step_three {
   display: none;
 }
+.step_four {
+  display: none;
+}
+ .step_five {
+   /* display: none;  */
+} 
 .step_h1 {
   letter-spacing: 2px;
   margin-bottom: 5px;
@@ -197,20 +202,20 @@ input {
 .service {
   display: flex;
   margin-top: 2rem;
- 
 }
-.service:nth-of-type(2){
-  margin-left: 1rem;
+.service_type:nth-of-type(2) {
+  margin-left: 2%;
 }
-.service:nth-of-type(3) {
-  margin-left: 1rem;
+.service_type:last-child {
+  margin-left: 2%;
 }
 .service_type {
-  width: 40%;
+  width: 30%;
   border: 1px solid var(--Lightg_ray);
   border-radius: 10px;
   padding: 1rem;
   background-color: var(--Alabaster);
+  /* margin-left: 1%; */
 }
 
 .service__img {
@@ -225,7 +230,7 @@ input {
   margin: 0;
   opacity: 0.4;
 }
-.month_year{
+.month_year {
   margin-top: 2rem;
   width: 30%;
   background-color: var(--Cool_gray);
@@ -234,16 +239,16 @@ input {
   width: 20px;
   height: 30px;
 } */
-.back{
+.back {
   position: absolute;
   top: 90%;
   left: 40%;
   padding: 0.15rem 0.25rem;
-  background:var(--White);
+  background: var(--White);
   border-style: none;
   opacity: 0.55;
 }
-.adds_on_services{
+.adds_on_services {
   display: flex;
   width: 80%;
   background-color: var(--Alabaster);
@@ -252,57 +257,57 @@ input {
   border: 2px solid var(--Lightg_ray);
   margin-top: 2rem;
 }
-.checkBox{
+.checkBox {
   margin-left: 10px;
   margin-top: 10px;
 }
-.adds_on_services div{
+.adds_on_services div {
   margin-top: 1.2rem;
   margin-left: 24px;
   line-height: 1.2rem;
 }
-.addsOn__price{
+.addsOn__price {
   margin-left: auto;
   margin-top: 1.5rem;
   margin-right: 0.8rem;
   color: var(--Purplish_blue);
 }
-.addsOn_service_name{
-color: var(--Marine_blue);
-font-weight: 600;
+.addsOn_service_name {
+  color: var(--Marine_blue);
+  font-weight: 600;
 }
-.addsOn_service_desc{
-opacity: 0.40;
+.addsOn_service_desc {
+  opacity: 0.4;
 }
-.miniBox{
+.miniBox {
   width: 80%;
   background-color: var(--Magnolia);
   padding: 1.2rem;
   border-radius: 10px;
   margin-top: 2rem;
 }
-.finish_name{
+.finish_name {
   color: var(--Marine_blue);
   font-weight: 600;
 }
-.finish_price{
+.finish_price {
   color: var(--Marine_blue);
   font-weight: 600;
   margin-left: auto;
   margin-top: 7px;
 }
-.change{
+.change {
   opacity: 0.4;
   text-decoration: underline;
 }
-.wrapp{
+.wrapp {
   display: flex;
   margin-bottom: 1.3rem;
 }
-.wrapp div{
+.wrapp div {
   line-height: 1.2rem;
 }
-.line{
+.line {
   width: 90%;
   height: 1px;
   margin-left: 6%;
@@ -310,35 +315,183 @@ opacity: 0.40;
   opacity: 0.4;
   margin-bottom: 1.8rem;
 }
-.finish_service{
+.finish_service {
   opacity: 0.4;
 }
-.finish_price2{
+.finish_price2 {
   margin-left: auto;
   color: var(--Marine_blue);
   opacity: 0.8;
 }
-.contain{
+.contain {
   line-height: 0.7rem;
 }
-.total_wrapp{
+.total_wrapp {
   display: flex;
   margin-top: 1rem;
   width: 80%;
 }
-#total{
+#total {
   margin-left: 10px;
 }
-.total_price{
+.total_price {
   margin-left: auto;
- color: var(--Purplish_blue);
- font-weight: 900;
- font-size: 20px;
+  color: var(--Purplish_blue);
+  font-weight: 900;
+  font-size: 20px;
 }
-.attribution {
+#confirm {
+  background: var(--Purplish_blue);
+  padding: 0.4rem 1.5rem;
+}
+.lastStep {
+  display: flex;
+  align-items: center;
+}
+.thanks_img {
+  margin-left: 40%;
+  margin-bottom: 1.4rem;
+}
+.thanks_h {
+  margin-left: 35%;
+  margin-bottom: 0.35rem;
+}
+.thanks_txt {
+  text-align-last: center;
+  opacity: 0.4;
+}
+#mobile_button {
+  display: none;
+}
+.sideBox_mobileView {
+  display: none;
+}
+/* .attribution {
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+} */
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+  }
+  main {
+    width: 80%;
+    left: 15%;
+    margin: 0;
+    /*left: 0;
+    margin-left: 0 auto; */
+    top: 20%;
+    z-index: 4;
+    background-color: var(--Lightg_ray);
+  }
+  .side_box {
+    display: none;
+  }
+  .sideBox_mobileView {
+    width: 100%;
+    background-color: var(--Pastel_blue);
+    background-image: url("assets/images/bg-sidebar-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    padding-bottom: 7rem;
+    display: flex;
+    justify-content: center;
+  }
+  .list {
+    margin: 3.6rem 10px 0;
+  }
+  .step_h1,
+  .step_p {
+    /* white-space: nowrap; */
+    max-width: 16rem;
+  }
+  section {
+    width: 100%;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    padding-right: 1rem;
+    background-color: white;
+    border-radius: 20px;
+  }
+
+  .next {
+    white-space: nowrap;
+    padding: 0.6rem 0.8rem;
+    position: relative;
+    display: none;
+  }
+  .back {
+    top: 20%;
+    left: 6%;
+    display: none;
+  }
+  #mobile_button {
+    display: block;
+  }
+  .service {
+    flex-direction: column;
+    margin-bottom: 5%;
+  }
+  .service_type {
+    display: flex;
+    width: 95%;
+    padding-top: 0.7rem;
+    padding-bottom: 0rem;
+  }
+  .service_type:nth-of-type(2) {
+    margin-left: 0%;
+    margin-bottom: 2%;
+  }
+  .service_type:nth-of-type(3) {
+    margin-left: 0%;
+  }
+  .service_type:nth-of-type(1) {
+    margin-bottom: 2%;
+  }
+  .service__name {
+    margin-left: 4%;
+  }
+  .addsOn_service_desc {
+    white-space: nowrap;
+    font-size: 0.86rem;
+  }
+  .adds_on_services div {
+    margin-left: 0.5rem;
+  }
+  .adds_on_services {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .miniBox {
+    width: 90%;
+  }
+  .total_wrapp {
+    margin-bottom: 1rem;
+    width: 90%;
+  }
+  .thanks {
+    margin-bottom: 1rem;
+  }
+  .thanks_img {
+    margin-left: 35%;
+  }
+  .thanks_h {
+    margin-left: 27%;
+  }
+  .thanks_txt {
+  text-align: center;
+  }
+  footer {
+    background: var(--White);
+    width: 100%;
+    padding-bottom: 1.5rem;
+    padding-right: 1rem;
+    position: absolute;
+    top: 105%;
+    z-index: -4;
+  }
 }

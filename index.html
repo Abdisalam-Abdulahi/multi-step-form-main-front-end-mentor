@@ -13,16 +13,20 @@
     />
 
     <title>Frontend Mentor | Multi-step form</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <link rel="stylesheet" href="style.css" />
     <script
       src="main.js
    "
-      defe
+      defer
     ></script>
   </head>
   <body>
+    <div class="sideBox_mobileView">
+      <div class="list">1</div>
+      <div class="list">2</div>
+      <div class="list">3</div>
+      <div class="list">4</div>
+    </div>
     <main>
       <div class="container">
         <div class="side_box">
@@ -77,9 +81,10 @@
             </div>
           </form>
         </section>
+      
         <button class="back">Go Back</button>
         <button class="next">Next Step</button>
-
+     
         <section class="stept_two">
           <h1 class="step_h1">Select your plan</h1>
           <p class="step_p">
@@ -160,30 +165,52 @@
           <div class="miniBox">
             <div class="wrapp">
               <div>
-              <p class="finish_name">Arcade (monthly)</p>
-              <p class="change">change</p>
-            </div>
+                <p class="finish_name">Arcade (monthly)</p>
+                <p class="change">change</p>
+              </div>
               <p class="finish_price">$9/mo</p>
             </div>
             <div class="line"></div>
             <div class="contain">
-            <div class="wrapp">
-              <p class="finish_service">Online service</p>
-              <p class="finish_price2">+$1/mo</p>
+              <div class="wrapp">
+                <p class="finish_service">Online service</p>
+                <p class="finish_price2">+$1/mo</p>
+              </div>
+              <div class="wrapp">
+                <p class="finish_service">large storage</p>
+                <p class="finish_price2">+$2/mo</p>
+              </div>
             </div>
-            <div class="wrapp">
-              <p class="finish_service">large storage</p>
-              <p class="finish_price2">+$2/mo</p>
-            </div>
-          </div>
           </div>
           <div class="total_wrapp">
             <p class="finish_service" id="total">Total(per month)</p>
             <p class="total_price">+$12/mo</p>
           </div>
+          <button class="next" id="confirm">Confirm</button>
+        </section>
+        <section class="step_five">
+          <div class="lastStep">
+            <div class="thanks">
+              <img
+                class="thanks_img"
+                src="assets/images/icon-thank-you.svg"
+                alt=""
+              />
+              <h1 class="thanks_h">Thank you!</h1>
+              <p class="thanks_txt">
+                Thanks for confirming your subscription! We hope you have fun
+                using our platform. If you ever need support, please feel free
+                to email us at support@loremgaming.com.
+              </p>
+            </div>
+          </div>
         </section>
       </div>
     </main>
+<footer>
+  <button class="back" id="mobile_button">Go Back</button>
+  <button class="next" id="mobile_button">Next Step</button>
+</footer>
 
     <!-- Sidebar start -->
 
