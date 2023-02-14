@@ -134,6 +134,7 @@ dd {
   font-weight: 700;
 }
 .list {
+  cursor: pointer;
   height: 30px;
   width: 30px;
   border: 1px solid var(--Alabaster);
@@ -152,7 +153,7 @@ section {
   padding-top: 3.25rem;
 }
 .step_one {
-  /* display: none; */
+  display: none;
 }
 .stept_two {
   display: none;
@@ -383,6 +384,12 @@ opacity: 0.4;
 }
 .sideBox_mobileView {
   display: none;
+}
+.active{
+  display: block;
+}
+.clicked{
+  background-color: yellow;
 }
 /* .attribution {
   font-size: 11px;

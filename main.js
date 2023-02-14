@@ -10,12 +10,14 @@ const step_three = document.querySelector(".step_three");
 const step_four = document.querySelector(".step_four");
 const step_five = document.querySelector(".step_five");
 const confirm = document.querySelector("#confirm");
+const sections = document.querySelectorAll("section");
 
 let iconClickChecker = false;
 if (iconClickChecker == false) {
   month.style.opacity = "1";
   year.style.opacity = "0.4";
 }
+// toggles between month and year
 icon.addEventListener("click", () => {
   if (iconClickChecker == false) {
     icon.style.transform = "translate(30px,0)";
@@ -31,46 +33,64 @@ icon.addEventListener("click", () => {
 });
 
 next.addEventListener("click", goNext);
-
+goBackBTN_remover();
+var quesionNo = 0;
 function goNext() {
-  if (step_one.style.display !== "none") {
-    step_one.style.display = "none";
-    step_two.style.display = "block";
-    back.style.display = "block";
-  } else if (step_two.style.display !== "none") {
-    step_two.style.display = "none";
-    step_three.style.display = "block";
-  } else if (step_three.style.display !== "none") {
-    step_three.style.display = "none";
-    step_four.style.display = "block";
-    next.style.display = "none";
+  quesionNo++;
+  if (sections.length > quesionNo) {
+    // remove the active class from the all parts of the document.
+    document.querySelector(".active").classList.remove("active");
+    sections[quesionNo].classList.add("active");
   }
-  // else if(step_four.style.display !== "none"){
-  //   step_three.style.display = "none"
-  //   step_four.style.display = "block"
-  // }
+  nextBTN_remover();
+  goBackBTN_remover();
 }
-confirm.addEventListener("click", () => {
-  step_four.style.display = "none";
-  step_five.style.display = "block";
-});
+confirm.addEventListener("click", goNext);
+
 back.addEventListener("click", goBack);
+
 function goBack() {
-  if (step_five.style.display !== "none") {
-    step_five.style.display = "none";
-    step_four.style.display = "block";
+  quesionNo--;
+  if (sections.length > quesionNo) {
+    // remove the active class from the all parts of the document.
+    document.querySelector(".active").classList.remove("active");
+    sections[quesionNo].classList.add("active");
+  }
+
+  nextBTN_remover();
+  goBackBTN_remover();
+}
+function nextBTN_remover() {
+  if (
+    sections[quesionNo].className == "step_four active" ||
+    sections[quesionNo].className == "step_five active"
+  ) {
+    next.style.display = "none";
+  } else {
     next.style.display = "block";
-  } else if (step_four.style.display !== "none") {
-    step_four.style.display = "none";
-    step_three.style.display = "block"
-  } 
-  if (step_three.style.display === "block") {
-    step_three.style.display = "none";
-    step_two.style.display = "block";
-  } else if (step_two.style.display !== "none") {
-    step_two.style.display = "none";
-    step_one.style.display = "block";
-  } else if (step_one.style.display !== "none") {
-    back.style.display = "none";
   }
 }
+function goBackBTN_remover() {
+  if (step_one.className == "step_one active") {
+    back.style.display = "none";
+  } else {
+    back.style.display = "block";
+  }
+}
+// side_box
+const list = document.querySelectorAll("#list")
+
+for(let i = 0; i<list.length; i++){
+ const item = list[i];
+
+ item.addEventListener("click", ()=>{
+  const item_data = item.firstChild.data 
+  console.log(item_data)
+  document.querySelector(".clicked").classList.remove("clicked")
+  item.classList.add("clicked")
+  document.querySelector(".active").classList.remove("active");
+  sections[item_data -1].classList.add("active")
+
+ })
+}
+
