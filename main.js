@@ -11,6 +11,7 @@ const step_four = document.querySelector(".step_four");
 const step_five = document.querySelector(".step_five");
 const confirm = document.querySelector("#confirm");
 const sections = document.querySelectorAll("section");
+const list = document.querySelectorAll("#list");
 
 let iconClickChecker = false;
 if (iconClickChecker == false) {
@@ -44,6 +45,7 @@ function goNext() {
   }
   nextBTN_remover();
   goBackBTN_remover();
+  listBg_changer(list);
 }
 confirm.addEventListener("click", goNext);
 
@@ -78,19 +80,31 @@ function goBackBTN_remover() {
   }
 }
 // side_box
-const list = document.querySelectorAll("#list")
+for (let i = 0; i < list.length; i++) {
+  const item = list[i];
 
-for(let i = 0; i<list.length; i++){
- const item = list[i];
+  item.addEventListener("click", () => {
+    const item_data = item.firstChild.data;
+    console.log(item_data);
+    //remove it first the other elelment
+    document.querySelector(".clicked").classList.remove("clicked");
+    item.classList.add("clicked");
 
- item.addEventListener("click", ()=>{
-  const item_data = item.firstChild.data 
-  console.log(item_data)
-  document.querySelector(".clicked").classList.remove("clicked")
-  item.classList.add("clicked")
-  document.querySelector(".active").classList.remove("active");
-  sections[item_data -1].classList.add("active")
-
- })
+    document.querySelector(".active").classList.remove("active");
+    sections[item_data - 1].classList.add("active");
+  });
 }
+let counter = 0;
+function listBg_changer(divs) {
+  // list.forEach(element=>{
 
+  // })
+ 
+  if (divs.length > counter) {
+    counter++;
+    document.querySelector(".clicked").classList.remove("clicked");
+    divs[counter].classList.add("clicked");
+    
+  }
+}
+console.log(list)
