@@ -14,10 +14,25 @@ const sections = document.querySelectorAll("section");
 const list = document.querySelectorAll("#list");
 const service__price = document.querySelectorAll(".service__price");
 const freeMo = document.querySelectorAll(".freeMo");
-console.log(freeMo);
-// freeMo.forEach(Element=>{
-//   Element.style.display = "block"
-// })
+const change = document.querySelector(".change");
+const services = document.querySelectorAll(".service_type");
+const checkBox = document.querySelectorAll(".checkBox");
+const classes = []
+checkBox.forEach((item) => {
+  console.log(item.className)
+  item.addEventListener("click", () => {
+    if (item.checked == true) {
+      classes.push(item.className)
+      document.body.style.background = "black";
+    } else {
+      document.body.style.background = "white";
+    }
+  });
+});
+console.log(classes)
+freeMo.forEach((Element) => {
+  Element.style.display = "block";
+});
 
 let iconClickChecker = false;
 if (iconClickChecker == false) {
@@ -39,7 +54,7 @@ icon.addEventListener("click", () => {
     month.style.opacity = "1";
     year.style.opacity = "0.4";
     monthly_price();
-    free_month_hide()
+    free_month_hide();
     iconClickChecker = false;
   }
 });
@@ -67,6 +82,7 @@ next.addEventListener("click", goNext);
 goBackBTN_remover();
 var quesionNo = 0;
 function goNext() {
+  tester();
   quesionNo++;
   if (sections.length > quesionNo) {
     // remove the active class from the all parts of the document.
@@ -109,6 +125,23 @@ function goBackBTN_remover() {
     back.style.display = "block";
   }
 }
+change.addEventListener("click", () => {
+  quesionNo = 0;
+  document.querySelector(".active").classList.remove("active");
+  sections[quesionNo + 1].classList.add("active");
+  goNext();
+});
+let namer;
+let price;
+
+// main functionality
+function tester() {
+  services.forEach((item) => {
+    namer = item.childNodes[3].childNodes[0].data;
+    price = item.childNodes[3].childNodes[2].innerHTML;
+  });
+}
+
 // side_box
 for (let i = 0; i < list.length; i++) {
   const item = list[i];
@@ -136,4 +169,3 @@ function listBg_changer(divs) {
     divs[counter].classList.add("clicked");
   }
 }
-console.log(list);
