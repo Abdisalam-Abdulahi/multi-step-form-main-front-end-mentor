@@ -12,12 +12,19 @@ const step_five = document.querySelector(".step_five");
 const confirm = document.querySelector("#confirm");
 const sections = document.querySelectorAll("section");
 const list = document.querySelectorAll("#list");
+const service__price = document.querySelectorAll(".service__price");
+const freeMo = document.querySelectorAll(".freeMo");
+console.log(freeMo);
+// freeMo.forEach(Element=>{
+//   Element.style.display = "block"
+// })
 
 let iconClickChecker = false;
 if (iconClickChecker == false) {
   month.style.opacity = "1";
   year.style.opacity = "0.4";
 }
+
 // toggles between month and year
 icon.addEventListener("click", () => {
   if (iconClickChecker == false) {
@@ -25,14 +32,37 @@ icon.addEventListener("click", () => {
     iconClickChecker = true;
     month.style.opacity = "0.4";
     year.style.opacity = "1";
+    yeraly_price();
+    free_month_show();
   } else if (iconClickChecker == true) {
     icon.style.transform = "translate(1px,0)";
     month.style.opacity = "1";
     year.style.opacity = "0.4";
+    monthly_price();
+    free_month_hide()
     iconClickChecker = false;
   }
 });
-
+function yeraly_price() {
+  service__price[0].firstChild.data = "$90/yr";
+  service__price[1].firstChild.data = "$120/yr";
+  service__price[2].firstChild.data = "$150/yr";
+}
+function monthly_price() {
+  service__price[0].firstChild.data = "$9/mo";
+  service__price[1].firstChild.data = "$12/mo";
+  service__price[2].firstChild.data = "$15/mo";
+}
+function free_month_show() {
+  freeMo.forEach((item) => {
+    item.style.display = "block";
+  });
+}
+function free_month_hide() {
+  freeMo.forEach((item) => {
+    item.style.display = "none";
+  });
+}
 next.addEventListener("click", goNext);
 goBackBTN_remover();
 var quesionNo = 0;
@@ -99,13 +129,11 @@ function listBg_changer(divs) {
   // list.forEach(element=>{
 
   // })
- 
+
   if (divs.length > counter) {
     counter++;
     document.querySelector(".clicked").classList.remove("clicked");
     divs[counter].classList.add("clicked");
-    
   }
 }
-console.log(list)
-// checking
+console.log(list);

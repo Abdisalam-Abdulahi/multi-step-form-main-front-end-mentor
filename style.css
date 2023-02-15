@@ -231,6 +231,11 @@ input {
   margin: 0;
   opacity: 0.4;
 }
+.freeMo{
+  display: none;
+  font-size: 0.9rem;
+  color: var(--Marine_blue);
+}
 .monthly_yearly{
   background-color: var(--Magnolia);
   display: flex;
