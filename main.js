@@ -108,3 +108,4 @@ function listBg_changer(divs) {
   }
 }
 console.log(list)
+// checking
