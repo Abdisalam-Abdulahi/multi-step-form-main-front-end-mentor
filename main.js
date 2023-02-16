@@ -17,19 +17,11 @@ const freeMo = document.querySelectorAll(".freeMo");
 const change = document.querySelector(".change");
 const services = document.querySelectorAll(".service_type");
 const checkBox = document.querySelectorAll(".checkBox");
-const classes = []
-checkBox.forEach((item) => {
-  console.log(item.className)
-  item.addEventListener("click", () => {
-    if (item.checked == true) {
-      classes.push(item.className)
-      document.body.style.background = "black";
-    } else {
-      document.body.style.background = "white";
-    }
-  });
-});
-console.log(classes)
+const finish_name = document.querySelector(".finish_name");
+const finish_price = document.querySelector(".finish_price");
+const addsOn_service_name = document.querySelectorAll(".addsOn_service_name")
+
+// console.log(classes)
 freeMo.forEach((Element) => {
   Element.style.display = "block";
 });
@@ -134,13 +126,45 @@ change.addEventListener("click", () => {
 let namer;
 let price;
 
+
 // main functionality
 function tester() {
   services.forEach((item) => {
-    namer = item.childNodes[3].childNodes[0].data;
-    price = item.childNodes[3].childNodes[2].innerHTML;
+    item.addEventListener("click", () => {
+      namer = item.childNodes[3].childNodes[0].data;
+      price = item.childNodes[3].childNodes[2].innerHTML;
+      finish_name.textContent = namer;
+      finish_price.textContent = price;
+      if (price !== undefined) {
+        const  araying = price.split("/")
+        // arr.push(araying)
+        console.log(araying)
+         if(araying[1]== "mo"){
+           finish_name.textContent = `${namer} (monthly)`;
+         }else{
+          finish_name.textContent = `${namer} (yearly)`;
+         }
+       }
+    });
   });
 }
+
+const classes = [];
+checkBox.forEach((item) => {
+  // console.log(item.className)
+  item.addEventListener("click", () => {
+    if (item.checked == true) {
+      // addsOn_service_name.forEach(element =>{
+      //   console.log(element.textContent)
+      // })
+      console.log(item.nextSibling.nextElementSibling.childNodes[1].innerHTML)
+      classes.push(item.className);
+      document.body.style.background = "black";
+    } else {
+      document.body.style.background = "white";
+    }
+  });
+});
 
 // side_box
 for (let i = 0; i < list.length; i++) {

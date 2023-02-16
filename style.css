@@ -211,6 +211,7 @@ input {
   margin-left: 2%;
 }
 .service_type {
+  cursor: pointer;
   width: 30%;
   border: 1px solid var(--Lightg_ray);
   border-radius: 10px;
