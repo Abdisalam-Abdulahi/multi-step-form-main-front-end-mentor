@@ -19,7 +19,16 @@ const services = document.querySelectorAll(".service_type");
 const checkBox = document.querySelectorAll(".checkBox");
 const finish_name = document.querySelector(".finish_name");
 const finish_price = document.querySelector(".finish_price");
-const addsOn_service_name = document.querySelectorAll(".addsOn_service_name")
+const addsOn_service_name = document.querySelectorAll(".addsOn_service_name");
+const one = document.querySelector(".one");
+const two = document.querySelector(".two");
+const three = document.querySelector(".three");
+const fn_p1 = document.querySelector(".fn_p1");
+const fn_p2 = document.querySelector(".fn_p2");
+const fn_p3 = document.querySelector(".fn_p3");
+const itemOne = document.querySelector(".itemOne");
+const itemTwo = document.querySelector(".itemTwo");
+const itemThree = document.querySelector(".itemThree");
 
 // console.log(classes)
 freeMo.forEach((Element) => {
@@ -31,7 +40,7 @@ if (iconClickChecker == false) {
   month.style.opacity = "1";
   year.style.opacity = "0.4";
 }
-
+free_month_hide();
 // toggles between month and year
 icon.addEventListener("click", () => {
   if (iconClickChecker == false) {
@@ -41,6 +50,7 @@ icon.addEventListener("click", () => {
     year.style.opacity = "1";
     yeraly_price();
     free_month_show();
+    addsOn_price_changer();
   } else if (iconClickChecker == true) {
     icon.style.transform = "translate(1px,0)";
     month.style.opacity = "1";
@@ -69,6 +79,11 @@ function free_month_hide() {
   freeMo.forEach((item) => {
     item.style.display = "none";
   });
+}
+function addsOn_price_changer() {
+  itemOne.textContent = "+$10/yr";
+  itemTwo.textContent = "+$20/yr";
+  itemThree.textContent = "+$20/yr";
 }
 next.addEventListener("click", goNext);
 goBackBTN_remover();
@@ -126,7 +141,6 @@ change.addEventListener("click", () => {
 let namer;
 let price;
 
-
 // main functionality
 function tester() {
   services.forEach((item) => {
@@ -136,36 +150,60 @@ function tester() {
       finish_name.textContent = namer;
       finish_price.textContent = price;
       if (price !== undefined) {
-        const  araying = price.split("/")
-        // arr.push(araying)
-        console.log(araying)
-         if(araying[1]== "mo"){
-           finish_name.textContent = `${namer} (monthly)`;
-         }else{
+        const araying = price.split("/");
+        if (araying[1] == "mo") {
+          finish_name.textContent = `${namer} (monthly)`;
+        } else {
           finish_name.textContent = `${namer} (yearly)`;
-         }
-       }
+        }
+      }
     });
   });
 }
 
-const classes = [];
+let addsOn_name_arr = [];
+let addsOn_price_arr = [];
+let numbersOnly_arr = [];
 checkBox.forEach((item) => {
   // console.log(item.className)
   item.addEventListener("click", () => {
     if (item.checked == true) {
-      // addsOn_service_name.forEach(element =>{
-      //   console.log(element.textContent)
-      // })
-      console.log(item.nextSibling.nextElementSibling.childNodes[1].innerHTML)
-      classes.push(item.className);
-      document.body.style.background = "black";
+      const addsOn_name =
+        item.nextSibling.nextElementSibling.childNodes[1].innerHTML;
+      const addsOn_price = item.nextElementSibling.nextElementSibling.innerHTML;
+      addsOn_name_arr.push(addsOn_name);
+      addsOn_price_arr.push(addsOn_price);
+      one.textContent = addsOn_name_arr[0];
+      fn_p1.textContent = addsOn_price_arr[0];
+      console.log(addsOn_price_arr[0]);
+
+      if (addsOn_name_arr.length > 1 && addsOn_price_arr.length > 1) {
+        two.textContent = addsOn_name_arr[1];
+        fn_p2.textContent = addsOn_price_arr[1];
+        three.textContent = addsOn_name_arr[2];
+        fn_p3.textContent = addsOn_price_arr[2];
+
+      }
     } else {
-      document.body.style.background = "white";
     }
   });
 });
 
+console.log(addsOn_name_arr);
+console.log(addsOn_price_arr);
+
+// splitter(addsOn_price_arr[0]);
+function splitter(sub_arr) {
+  const converter = sub_arr.split("");
+  if (converter.length == 6) {
+    numbersOnly_arr.push(converter[2]);
+  } else {
+    numbersOnly_arr.push(converter[2]);
+    numbersOnly_arr.push(converter[3]);
+  }
+  console.log(converter);
+}
+console.log(numbersOnly_arr);
 // side_box
 for (let i = 0; i < list.length; i++) {
   const item = list[i];
