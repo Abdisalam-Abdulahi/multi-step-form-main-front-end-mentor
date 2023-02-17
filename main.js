@@ -29,6 +29,7 @@ const fn_p3 = document.querySelector(".fn_p3");
 const itemOne = document.querySelector(".itemOne");
 const itemTwo = document.querySelector(".itemTwo");
 const itemThree = document.querySelector(".itemThree");
+const total_price = document.querySelector(".total_price")
 
 // console.log(classes)
 freeMo.forEach((Element) => {
@@ -90,6 +91,7 @@ goBackBTN_remover();
 var quesionNo = 0;
 function goNext() {
   tester();
+  
   quesionNo++;
   if (sections.length > quesionNo) {
     // remove the active class from the all parts of the document.
@@ -120,6 +122,7 @@ function nextBTN_remover() {
     sections[quesionNo].className == "step_four active" ||
     sections[quesionNo].className == "step_five active"
   ) {
+    totalMaker();
     next.style.display = "none";
   } else {
     next.style.display = "block";
@@ -138,32 +141,37 @@ change.addEventListener("click", () => {
   sections[quesionNo + 1].classList.add("active");
   goNext();
 });
-let namer;
-let price;
 
 // main functionality
+let namer;
+let price;
+let numbersOnly_arr = [];
 function tester() {
   services.forEach((item) => {
     item.addEventListener("click", () => {
       namer = item.childNodes[3].childNodes[0].data;
       price = item.childNodes[3].childNodes[2].innerHTML;
+      splitter(price);
       finish_name.textContent = namer;
       finish_price.textContent = price;
-      if (price !== undefined) {
-        const araying = price.split("/");
-        if (araying[1] == "mo") {
-          finish_name.textContent = `${namer} (monthly)`;
-        } else {
-          finish_name.textContent = `${namer} (yearly)`;
-        }
-      }
+      mo_yr_changer(price)
+   
     });
   });
 }
-
+// changes mo and yr 
+function mo_yr_changer(price){
+  if (price !== undefined) {
+    const araying = price.split("/");
+    if (araying[1] == "mo") {
+      total_price.textContent = `$${sum}/mo`;
+    } else {
+      total_price.textContent = `$${sum}/yr`;
+    }
+  }
+}
 let addsOn_name_arr = [];
 let addsOn_price_arr = [];
-let numbersOnly_arr = [];
 checkBox.forEach((item) => {
   // console.log(item.className)
   item.addEventListener("click", () => {
@@ -175,35 +183,58 @@ checkBox.forEach((item) => {
       addsOn_price_arr.push(addsOn_price);
       one.textContent = addsOn_name_arr[0];
       fn_p1.textContent = addsOn_price_arr[0];
-      console.log(addsOn_price_arr[0]);
+      splitter(addsOn_price);
+     
+  // console.log(addsOn_price_arr[0]);
 
       if (addsOn_name_arr.length > 1 && addsOn_price_arr.length > 1) {
         two.textContent = addsOn_name_arr[1];
         fn_p2.textContent = addsOn_price_arr[1];
         three.textContent = addsOn_name_arr[2];
         fn_p3.textContent = addsOn_price_arr[2];
-
       }
-    } else {
     }
   });
 });
 
-console.log(addsOn_name_arr);
-console.log(addsOn_price_arr);
 
-// splitter(addsOn_price_arr[0]);
 function splitter(sub_arr) {
   const converter = sub_arr.split("");
-  if (converter.length == 6) {
+  if (converter.includes("+") && converter.length == 6) {
     numbersOnly_arr.push(converter[2]);
-  } else {
-    numbersOnly_arr.push(converter[2]);
-    numbersOnly_arr.push(converter[3]);
+   }
+   else if (sub_arr == "$9/mo") {
+    numbersOnly_arr.push(converter[1]);
+  } else if (converter.length == 7 && !converter.includes("+")){
+    const joiner = converter[1] + converter[2] + converter[3];
+    numbersOnly_arr.push(joiner);
+  } else if(converter.length == 7 && converter.includes("+")){
+    const combiner1 = converter[2] + converter[3];
+    numbersOnly_arr.push(combiner1);
   }
-  console.log(converter);
+  else {
+
+    const combiner = converter[1] + converter[2];
+    numbersOnly_arr.push(combiner);
+  }
+  // console.log(converter);
 }
 console.log(numbersOnly_arr);
+let sum = 0;
+function totalMaker() {
+
+  numbersOnly_arr.forEach((item) => {
+  const numbrer =  parseInt(item)
+    sum += numbrer;
+    
+  });
+  mo_yr_changer(price)
+
+  console.log(sum);
+  
+}
+
+
 // side_box
 for (let i = 0; i < list.length; i++) {
   const item = list[i];
