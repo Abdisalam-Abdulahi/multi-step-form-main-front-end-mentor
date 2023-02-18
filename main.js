@@ -29,9 +29,13 @@ const fn_p3 = document.querySelector(".fn_p3");
 const itemOne = document.querySelector(".itemOne");
 const itemTwo = document.querySelector(".itemTwo");
 const itemThree = document.querySelector(".itemThree");
-const total_price = document.querySelector(".total_price")
+const total_price = document.querySelector(".total_price");
+const name_input = document.querySelector(".name_input");
+const email_input = document.querySelector(".email_input");
+const phoneNO_input = document.querySelector(".phoneNO_input");
+const pop_up_TXT = document.querySelectorAll(".pop_up_TXT");
 
-// console.log(classes)
+console.log(pop_up_TXT);
 freeMo.forEach((Element) => {
   Element.style.display = "block";
 });
@@ -91,8 +95,8 @@ goBackBTN_remover();
 var quesionNo = 0;
 function goNext() {
   tester();
-  
   quesionNo++;
+  form_valiadtor();
   if (sections.length > quesionNo) {
     // remove the active class from the all parts of the document.
     document.querySelector(".active").classList.remove("active");
@@ -117,6 +121,55 @@ function goBack() {
   nextBTN_remover();
   goBackBTN_remover();
 }
+// form validator
+function form_valiadtor() {
+  if (
+    name_input.value == "" ||
+    email_input.value == "" ||
+    phoneNO_input.value == ""
+  ) {
+    quesionNo = 0;
+    counter--;
+    pop_up_TXT_maker();
+  }
+  Email_checker();
+  phoneNumber_checker();
+}
+// pop_up_TXT[0].style.display = "block"
+function pop_up_TXT_maker() {
+  if (name_input.value == "") {
+    pop_up_TXT[0].style.display = "block";
+  }
+  if (email_input.value == "") {
+    pop_up_TXT[1].style.display = "block";
+  }
+  if (phoneNO_input.value == "") {
+    pop_up_TXT[2].style.display = "block";
+  }
+}
+function Email_checker() {
+  if (!email_input.value.includes("@gmail")) {
+    pop_up_TXT[1].style.display = "block";
+    pop_up_TXT[1].textContent = "Enter valid email address";
+    quesionNo = 0;
+    counter--;
+  }
+}
+
+
+function phoneNumber_checker() {
+  let isnumber = parseInt(phoneNO_input.value)
+  if (Number.isInteger(isnumber) !== true) {
+    pop_up_TXT[2].style.display = "block";
+    pop_up_TXT[2].textContent = "Enter your real number";
+    quesionNo = 0;
+    counter--;
+  }
+  if(Number.isInteger(isnumber)){
+    pop_up_TXT[2].style.display = "none";
+  }
+}
+//
 function nextBTN_remover() {
   if (
     sections[quesionNo].className == "step_four active" ||
@@ -154,13 +207,12 @@ function tester() {
       splitter(price);
       finish_name.textContent = namer;
       finish_price.textContent = price;
-      mo_yr_changer(price)
-   
+      mo_yr_changer(price);
     });
   });
 }
-// changes mo and yr 
-function mo_yr_changer(price){
+// changes mo and yr
+function mo_yr_changer(price) {
   if (price !== undefined) {
     const araying = price.split("/");
     if (araying[1] == "mo") {
@@ -184,8 +236,8 @@ checkBox.forEach((item) => {
       one.textContent = addsOn_name_arr[0];
       fn_p1.textContent = addsOn_price_arr[0];
       splitter(addsOn_price);
-     
-  // console.log(addsOn_price_arr[0]);
+
+      // console.log(addsOn_price_arr[0]);
 
       if (addsOn_name_arr.length > 1 && addsOn_price_arr.length > 1) {
         two.textContent = addsOn_name_arr[1];
@@ -197,23 +249,19 @@ checkBox.forEach((item) => {
   });
 });
 
-
 function splitter(sub_arr) {
   const converter = sub_arr.split("");
   if (converter.includes("+") && converter.length == 6) {
     numbersOnly_arr.push(converter[2]);
-   }
-   else if (sub_arr == "$9/mo") {
+  } else if (sub_arr == "$9/mo") {
     numbersOnly_arr.push(converter[1]);
-  } else if (converter.length == 7 && !converter.includes("+")){
+  } else if (converter.length == 7 && !converter.includes("+")) {
     const joiner = converter[1] + converter[2] + converter[3];
     numbersOnly_arr.push(joiner);
-  } else if(converter.length == 7 && converter.includes("+")){
+  } else if (converter.length == 7 && converter.includes("+")) {
     const combiner1 = converter[2] + converter[3];
     numbersOnly_arr.push(combiner1);
-  }
-  else {
-
+  } else {
     const combiner = converter[1] + converter[2];
     numbersOnly_arr.push(combiner);
   }
@@ -222,18 +270,14 @@ function splitter(sub_arr) {
 console.log(numbersOnly_arr);
 let sum = 0;
 function totalMaker() {
-
   numbersOnly_arr.forEach((item) => {
-  const numbrer =  parseInt(item)
+    const numbrer = parseInt(item);
     sum += numbrer;
-    
   });
-  mo_yr_changer(price)
+  mo_yr_changer(price);
 
   console.log(sum);
-  
 }
-
 
 // side_box
 for (let i = 0; i < list.length; i++) {

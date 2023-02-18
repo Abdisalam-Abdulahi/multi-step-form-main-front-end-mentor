@@ -182,6 +182,14 @@ form {
   flex-direction: column;
   margin-bottom: 25px;
 }
+.sub_flex{
+  display: flex;
+  justify-content: space-between;
+}
+.pop_up_TXT{
+  color: red;
+  display: none;
+}
 input {
   height: 3rem;
   border-radius: 10px;
